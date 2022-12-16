@@ -90,7 +90,7 @@ while getopts ":i:o:h:p:s:Sf:u:k:" o; do
 done
 shift $((OPTIND-1))
 
-tmp_gfwlist_dnsmasq_conf="/tmp/gfwlist.conf.`cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`"
+tmp_gfwlist_dnsmasq_conf="/tmp/gfwlist.conf.`date '+%s'`"
 
 curl -sf -o "${gfwlist}" \
 	"${gfwlist_url}" \
